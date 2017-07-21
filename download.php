@@ -2,7 +2,7 @@
      // Get the password
 	$pw = $_POST['password'];
 
-	if ($pw  != 'toto') {
+	if ($pw  != 'test') {
 	die('wrong password');
 	}
 
