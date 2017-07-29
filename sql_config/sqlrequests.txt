@@ -3,7 +3,7 @@
 CREATE TABLE `BetrackConf` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `StudyId` varchar(255) COLLATE latin1_general_ci NOT NULL,
-  `StudyActive` varchar(1) COLLATE latin1_general_ci NOT NULL,	
+  `StudyActive` varchar(1) COLLATE latin1_general_ci NOT NULL,
   `StudyName` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `StudyDescription` varchar(8192) COLLATE latin1_general_ci NOT NULL,
   `VersionApp` varchar(20) COLLATE latin1_general_ci NOT NULL,
@@ -11,12 +11,12 @@ CREATE TABLE `BetrackConf` (
   `PublicKey` varchar(1024) COLLATE latin1_general_ci NOT NULL,
   `ContactEmail` varchar(100) COLLATE latin1_general_ci NOT NULL,
   `LinkEndStudy` varchar(1024) COLLATE latin1_general_ci NOT NULL,
-  PRIMARY KEY (`id`)) ENGINE=MyISAM  DEFAULT CHARSET=latin1 
+  PRIMARY KEY (`id`)) ENGINE=MyISAM  DEFAULT CHARSET=latin1
   COLLATE=latin1_general_ci AUTO_INCREMENT=61;
 
 Insert value in configuration table
 
-INSERT INTO BetrackConf (StudyId, StudyActive, StudyName, StudyDescription, VersionApp, Duration, PublicKey, ContactEmail, LinkEndStudy) 
+INSERT INTO BetrackConf (StudyId, StudyActive, StudyName, StudyDescription, VersionApp, Duration, PublicKey, ContactEmail, LinkEndStudy)
           VALUES ('Participant Consent Form', '1', 'Participant Consent Form', 'Principal Investigator: Dr. Frances Chen, UBC Department of Psychology (Tel: 604-822-2549)
 
 Co-Investigator: Dr. Christine Anderl, , UBC Department of Psychology
@@ -50,27 +50,27 @@ By installing and setting up the application on your personal smartphone, you ar
 CREATE TABLE `BetrackApp` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ApplicationName` varchar(64) COLLATE latin1_general_ci NOT NULL,
-  PRIMARY KEY (`id`)) ENGINE=MyISAM  DEFAULT CHARSET=latin1 
+  PRIMARY KEY (`id`)) ENGINE=MyISAM  DEFAULT CHARSET=latin1
   COLLATE=latin1_general_ci AUTO_INCREMENT=61;
 
-INSERT INTO BetrackApp (ApplicationName) 
+INSERT INTO BetrackApp (ApplicationName)
           VALUES ('whatsapp')
-INSERT INTO BetrackApp (ApplicationName) 
+INSERT INTO BetrackApp (ApplicationName)
           VALUES ('instagram')
-INSERT INTO BetrackApp (ApplicationName) 
+INSERT INTO BetrackApp (ApplicationName)
           VALUES ('tinder')
-INSERT INTO BetrackApp (ApplicationName) 
+INSERT INTO BetrackApp (ApplicationName)
           VALUES ('snapchat')
 //Facebook
-INSERT INTO BetrackApp (ApplicationName) 
+INSERT INTO BetrackApp (ApplicationName)
           VALUES ('katana')
 //Messenger
-INSERT INTO BetrackApp (ApplicationName) 
+INSERT INTO BetrackApp (ApplicationName)
           VALUES ('orca')
-		  
+
 **** For test ***
-INSERT INTO BetrackApp (ApplicationName) 
-          VALUES ('deskclock')		  
+INSERT INTO BetrackApp (ApplicationName)
+          VALUES ('deskclock')
 
 ***************************Create study table study*********************************
 
@@ -82,11 +82,11 @@ CREATE TABLE `BetrackStudy` (
   `DateStop` varchar(15) COLLATE latin1_general_ci NOT NULL,
   `TimeStart` varchar(15) COLLATE latin1_general_ci NOT NULL,
   `TimeStop` varchar(15) COLLATE latin1_general_ci NOT NULL,
-  PRIMARY KEY (`id`)) ENGINE=MyISAM  
+  PRIMARY KEY (`id`)) ENGINE=MyISAM
   COLLATE=latin1_general_ci AUTO_INCREMENT=61;
 
 ****************************Create study table daily study**************************
-  
+
 CREATE TABLE `BetrackDailyStatus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `UserId` varchar(255) COLLATE latin1_general_ci NOT NULL,
@@ -99,11 +99,11 @@ CREATE TABLE `BetrackDailyStatus` (
   `Mood4` varchar(10) COLLATE latin1_general_ci NOT NULL,
   `Date` varchar(15) COLLATE latin1_general_ci NOT NULL,
   `Time` varchar(15) COLLATE latin1_general_ci NOT NULL,
-  PRIMARY KEY (`id`)) ENGINE=MyISAM  
+  PRIMARY KEY (`id`)) ENGINE=MyISAM
   COLLATE=latin1_general_ci AUTO_INCREMENT=61;
 
 ****************************Create study table start study**************************
-  
+
 CREATE TABLE `BetrackStartStudy` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `UserId` varchar(255) COLLATE latin1_general_ci NOT NULL,
@@ -118,22 +118,22 @@ CREATE TABLE `BetrackStartStudy` (
   `englishlevel5` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `englishlevel6` varchar(10) COLLATE latin1_general_ci NOT NULL,
   `university1` varchar(1) COLLATE latin1_general_ci NOT NULL,
-  `university2` varchar(255) COLLATE latin1_general_ci NOT NULL, 
-  `university3` varchar(1) COLLATE latin1_general_ci NOT NULL, 
-  `relationship` varchar(3) COLLATE latin1_general_ci NOT NULL, 
-  `contraception` varchar(1) COLLATE latin1_general_ci NOT NULL, 
-  `maternity` varchar(1) COLLATE latin1_general_ci NOT NULL, 
-  `period1` varchar(2) COLLATE latin1_general_ci NOT NULL, 
-  `period2` varchar(2) COLLATE latin1_general_ci NOT NULL, 
-  `period3` varchar(10) COLLATE latin1_general_ci NOT NULL, 
-  `period4` varchar(10) COLLATE latin1_general_ci NOT NULL, 
+  `university2` varchar(255) COLLATE latin1_general_ci NOT NULL,
+  `university3` varchar(1) COLLATE latin1_general_ci NOT NULL,
+  `relationship` varchar(3) COLLATE latin1_general_ci NOT NULL,
+  `contraception` varchar(1) COLLATE latin1_general_ci NOT NULL,
+  `maternity` varchar(1) COLLATE latin1_general_ci NOT NULL,
+  `period1` varchar(2) COLLATE latin1_general_ci NOT NULL,
+  `period2` varchar(2) COLLATE latin1_general_ci NOT NULL,
+  `period3` varchar(10) COLLATE latin1_general_ci NOT NULL,
+  `period4` varchar(10) COLLATE latin1_general_ci NOT NULL,
   `Date` varchar(15) COLLATE latin1_general_ci NOT NULL,
   `Time` varchar(15) COLLATE latin1_general_ci NOT NULL,
-  PRIMARY KEY (`id`)) ENGINE=MyISAM  
+  PRIMARY KEY (`id`)) ENGINE=MyISAM
   COLLATE=latin1_general_ci AUTO_INCREMENT=61;
 
 ****************************Create study table end study**************************
-  
+
   CREATE TABLE `BetrackEndStudy` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `UserId` varchar(255) COLLATE latin1_general_ci NOT NULL,
@@ -149,38 +149,39 @@ CREATE TABLE `BetrackStartStudy` (
   `Averageperiodicity` varchar(10) COLLATE latin1_general_ci NOT NULL,
   `Standarddeviation` varchar(10) COLLATE latin1_general_ci NOT NULL,
   `BetrackKilled` varchar(1) COLLATE latin1_general_ci NOT NULL,
+  `BetrackPolling` varchar(1) COLLATE latin1_general_ci NOT NULL,
   `Date` varchar(15) COLLATE latin1_general_ci NOT NULL,
   `Time` varchar(15) COLLATE latin1_general_ci NOT NULL,
-  PRIMARY KEY (`id`)) ENGINE=MyISAM  
+  PRIMARY KEY (`id`)) ENGINE=MyISAM
   COLLATE=latin1_general_ci AUTO_INCREMENT=61;
 
 ****************************Create session keys for crypto**************************
-    
+
   CREATE TABLE `BetrackSessionKeys` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `UserId` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `Sessionkey` varchar(512) COLLATE latin1_general_ci NOT NULL,
   `Date` varchar(15) COLLATE latin1_general_ci NOT NULL,
   `Time` varchar(15) COLLATE latin1_general_ci NOT NULL,
-  PRIMARY KEY (`id`)) ENGINE=MyISAM  
+  PRIMARY KEY (`id`)) ENGINE=MyISAM
   COLLATE=latin1_general_ci AUTO_INCREMENT=61;
 
-****************************Create table for phone usage**************************    
+****************************Create table for phone usage**************************
   CREATE TABLE `BetrackPhoneUsage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `UserId` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `ScreenState` varchar(1) COLLATE latin1_general_ci NOT NULL,
   `Date` varchar(15) COLLATE latin1_general_ci NOT NULL,
   `Time` varchar(15) COLLATE latin1_general_ci NOT NULL,
-  PRIMARY KEY (`id`)) ENGINE=MyISAM  
+  PRIMARY KEY (`id`)) ENGINE=MyISAM
   COLLATE=latin1_general_ci AUTO_INCREMENT=61;
 
-****************************Create table for notification time**************************  
+****************************Create table for notification time**************************
   CREATE TABLE `BetrackNotificationTime` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `UserId` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `NotifTime` varchar(15) COLLATE latin1_general_ci NOT NULL,
   `Date` varchar(15) COLLATE latin1_general_ci NOT NULL,
   `Time` varchar(15) COLLATE latin1_general_ci NOT NULL,
-  PRIMARY KEY (`id`)) ENGINE=MyISAM  
-  COLLATE=latin1_general_ci AUTO_INCREMENT=61;  
+  PRIMARY KEY (`id`)) ENGINE=MyISAM
+  COLLATE=latin1_general_ci AUTO_INCREMENT=61;
