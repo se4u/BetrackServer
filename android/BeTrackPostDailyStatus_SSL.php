@@ -6,42 +6,50 @@ if($result === false) {
     goto endsession;
 }
 
-$periodstatus = '';
-$sociallife1 = '';
-$sociallife2 = '';
-$mood1 = '';
-$mood2 = '';
-$mood3 = '';
-$mood4 = '';
+$mood = '';
+$social = '';
+$bored = '';
+$relaxed = '';
+$interact = '';
+$usedsocial = '';
+$socialcomputer = '';
+$whichwebsite = '';
+$actively = '';
 $date = '';
 $time = '';
 
-list($periodstatus, $sociallife1, $sociallife2, $mood1, $mood2, $mood3, $mood4, $date, $time) = explode(chr (30), $plain);
+list($mood, $social, $bored, $relaxed, $interact, $usedsocial, $socialcomputer, $whichwebsite, $actively, $date, $time) = explode(chr (30), $plain);
 
 //Check the data
 $userid = strip_tags(trim($userid));
 $userid = mysqli_real_escape_string($con, $userid);
 
-$periodstatus = strip_tags(trim($periodstatus));
-$periodstatus = mysqli_real_escape_string($con, $periodstatus);
+$mood = strip_tags(trim($mood));
+$mood = mysqli_real_escape_string($con, $mood);
 
-$sociallife1 = strip_tags(trim($sociallife1));
-$sociallife1 = mysqli_real_escape_string($con, $sociallife1);
+$social = strip_tags(trim($social));
+$social = mysqli_real_escape_string($con, $social);
 
-$sociallife2 = strip_tags(trim($sociallife2));
-$sociallife2 = mysqli_real_escape_string($con, $sociallife2);
+$bored = strip_tags(trim($bored));
+$bored = mysqli_real_escape_string($con, $bored);
 
-$mood1 = strip_tags(trim($mood1));
-$mood1 = mysqli_real_escape_string($con, $mood1);
+$relaxed = strip_tags(trim($relaxed));
+$relaxed = mysqli_real_escape_string($con, $relaxed);
 
-$mood2 = strip_tags(trim($mood2));
-$mood2 = mysqli_real_escape_string($con, $mood2);
+$interact = strip_tags(trim($interact));
+$interact = mysqli_real_escape_string($con, $interact);
 
-$mood3 = strip_tags(trim($mood3));
-$mood3 = mysqli_real_escape_string($con, $mood3);
+$usedsocial = strip_tags(trim($usedsocial));
+$usedsocial = mysqli_real_escape_string($con, $usedsocial);
 
-$mood4 = strip_tags(trim($mood4));
-$mood4 = mysqli_real_escape_string($con, $mood4);
+$socialcomputer = strip_tags(trim($socialcomputer));
+$socialcomputer = mysqli_real_escape_string($con, $socialcomputer);
+
+$whichwebsite = strip_tags(trim($whichwebsite));
+$whichwebsite = mysqli_real_escape_string($con, $whichwebsite);
+
+$actively = strip_tags(trim($actively));
+$actively = mysqli_real_escape_string($con, $actively);
 
 $date = strip_tags(trim($date));
 $date = mysqli_real_escape_string($con, $date);
@@ -49,10 +57,10 @@ $date = mysqli_real_escape_string($con, $date);
 $time = strip_tags(trim($time));
 $time = mysqli_real_escape_string($con, $time);
 
-$result = mysqli_query($con,"INSERT INTO BetrackDailyStatus (UserId, PeriodStatus, SocialLife1, SocialLife2, Mood1, Mood2, Mood3, Mood4, Date, Time) 
-          VALUES ('$userid ', '$periodstatus', '$sociallife1', '$sociallife2', '$mood1', '$mood2', '$mood3', '$mood4', '$date', '$time')");
- 
-endsession:		  
+$result = mysqli_query($con,"INSERT INTO BetrackDailyStatus (UserId, Mood, Social, Bored, Relaxed, Interact, UsedSocial, SocialComputer, WhichWebsite, Actively, Date, Time)
+          VALUES ('$userid ', '$mood', '$social', '$bored', '$relaxed', '$interact', '$usedsocial', '$socialcomputer', '$whichwebsite', '$actively', '$date', '$time')");
+
+endsession:
 if($result === true) {
     echo 'OK';
 }
